@@ -3,6 +3,10 @@
     "description": "Add YAML file support to Laravel Configuration",
     "authors": [
         {
+            "name": "Roman Kudlay",
+            "email": "roman@kudlay.pro"
+        },
+        {
             "name": "Thomas SIEFFERT",
             "email": "thomas.sieffert@devitek.fr"
         }

@@ -1,3 +1,9 @@
+# 2015-12-29
+
+Update to 2.1.2
+- Laravel 2.1.24 support
+- Package forked
+
 # 2015-10-19
 
 Update to 2.1 :

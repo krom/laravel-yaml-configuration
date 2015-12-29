@@ -4,10 +4,10 @@ This package uses Symfony/Yaml parser.
 
 ## Installing
 
-Add ```"devitek/yaml-configuration": "2.*"``` to your **composer.json** by running :
+Add ```"krom/laravel-yaml-configuration": "2.*"``` to your **composer.json** by running :
 
 ```
-php composer.phar require devitek/yaml-configuration
+php composer.phar require krom/laravel-yaml-configuration
 ```
 
 And select version : ```2.*```
@@ -19,7 +19,7 @@ You have to add (or merge)
 ```
 protected function bootstrappers()
 {
-    return array_merge($this->bootstrappers, [\\Devitek\\Core\\Config\\LoadYamlConfiguration::class]);
+    return array_merge($this->bootstrappers, [\\krom\\Core\\Config\\LoadYamlConfiguration::class]);
 }
 ```
 
@@ -60,3 +60,7 @@ something: %sprintf:hell %s,world%
 ```
 
 Enjoy it ! Feel free to fork :) !
+
+## 
+
+This package is fork of devitek/yaml-configuration
