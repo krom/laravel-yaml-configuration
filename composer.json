@@ -1,5 +1,5 @@
 {
-    "name": "devitek/yaml-configuration",
+    "name": "krom/yaml-configuration",
     "description": "Add YAML file support to Laravel Configuration",
     "authors": [
         {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Devitek\\": "src/Devitek"
+            "krom\\": "src/krom"
         }
     },
     "minimum-stability": "dev"

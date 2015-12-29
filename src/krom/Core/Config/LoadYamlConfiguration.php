@@ -1,6 +1,6 @@
 <?php
 
-namespace Devitek\Core\Config;
+namespace krom\Core\Config;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
@@ -60,13 +60,31 @@ class LoadYamlConfiguration extends LoadConfiguration
 
         foreach ($this->getAllowedFileExtensions() as $extension) {
             foreach (Finder::create()->files()->name('*.' . $extension)->in($app->configPath()) as $file) {
-                $nesting = $this->getConfigurationNesting($file);
+                $nesting = $this->getConfigurationNesting($file, config_path());
 
                 $files[$nesting . basename($file->getRealPath(), '.' . $extension)] = $file->getRealPath();
             }
         }
 
         return $files;
+    }
+
+    /**
+     * Get the configuration file nesting path.
+     *
+     * @param  \Symfony\Component\Finder\SplFileInfo $file
+     *
+     * @return string
+     */
+    protected function getConfigurationNesting(SplFileInfo $file, $configPath)
+    {
+        $directory = dirname($file->getRealPath());
+
+        if ($tree = trim(str_replace(config_path(), '', $directory), DIRECTORY_SEPARATOR)) {
+            $tree = str_replace(DIRECTORY_SEPARATOR, '.', $tree) . '.';
+        }
+
+        return $tree;
     }
 
     /**
