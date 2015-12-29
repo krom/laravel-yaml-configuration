@@ -1,5 +1,5 @@
 {
-    "name": "krom/yaml-configuration",
+    "name": "krom/laravel-yaml-configuration",
     "description": "Add YAML file support to Laravel Configuration",
     "authors": [
         {
